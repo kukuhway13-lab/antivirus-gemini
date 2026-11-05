@@ -15,7 +15,16 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.BugReport
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -73,7 +82,7 @@ class MainActivity : ComponentActivity() {
                     title = {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
-                                imageVector = Icons.Default.Shield,
+                                imageVector = Icons.Default.Lock,
                                 contentDescription = null,
                                 tint = NeonCyan,
                                 modifier = Modifier.size(28.dp)
@@ -107,7 +116,7 @@ class MainActivity : ComponentActivity() {
                     NavigationBarItem(
                         selected = selectedTab.value == 0,
                         onClick = { selectedTab.value = 0 },
-                        icon = { Icon(Icons.Default.Security, contentDescription = "Pindai") },
+                        icon = { Icon(Icons.Default.Search, contentDescription = "Pindai") },
                         label = { Text("Pindai") },
                         colors = NavigationBarItemDefaults.colors(
                             selectedIconColor = NeonCyan,
@@ -130,7 +139,7 @@ class MainActivity : ComponentActivity() {
                                     }
                                 }
                             ) {
-                                Icon(Icons.Default.CompareArrows, contentDescription = "Komparasi") 
+                                Icon(Icons.Default.Refresh, contentDescription = "Komparasi") 
                             }
                         },
                         label = { Text("Komparasi AI") },
@@ -220,9 +229,9 @@ class MainActivity : ComponentActivity() {
                         Icon(
                             imageVector = when {
                                 threatCount > 0 -> Icons.Default.Warning
-                                suspiciousCount > 0 -> Icons.Default.HelpOutline
+                                suspiciousCount > 0 -> Icons.Default.Info
                                 appList.isNotEmpty() -> Icons.Default.CheckCircle
-                                else -> Icons.Default.Shield
+                                else -> Icons.Default.Lock
                             },
                             contentDescription = null,
                             tint = statusColor,
@@ -300,7 +309,7 @@ class MainActivity : ComponentActivity() {
                 colors = ButtonDefaults.buttonColors(containerColor = NeonCyan),
                 shape = RoundedCornerShape(12.dp)
             ) {
-                Icon(Icons.Default.Radar, contentDescription = null, tint = CyberBgDark)
+                Icon(Icons.Default.Search, contentDescription = null, tint = CyberBgDark)
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("PINDAI SEMUA APLIKASI DI HP", color = CyberBgDark, fontWeight = FontWeight.Bold)
             }
@@ -332,7 +341,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.padding(12.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Icon(Icons.Default.AutoAwesome, contentDescription = null, tint = NeonPurple)
+                    Icon(Icons.Default.Star, contentDescription = null, tint = NeonPurple)
                     Spacer(modifier = Modifier.width(10.dp))
                     Text(
                         text = "Setiap aplikasi berisiko dapat langsung dikonsultasikan ke Gemini AI untuk mendapatkan second opinion dan rekomendasi mitigasi.",
@@ -511,7 +520,7 @@ class MainActivity : ComponentActivity() {
                     // Pembanding Gemini AI
                     Column(modifier = Modifier.weight(1f)) {
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(Icons.Default.AutoAwesome, contentDescription = null, tint = NeonPurple, modifier = Modifier.size(12.dp))
+                            Icon(Icons.Default.Star, contentDescription = null, tint = NeonPurple, modifier = Modifier.size(12.dp))
                             Spacer(modifier = Modifier.width(3.dp))
                             Text("GEMINI AI", fontSize = 10.sp, color = NeonPurple, fontWeight = FontWeight.SemiBold)
                         }
@@ -544,7 +553,7 @@ class MainActivity : ComponentActivity() {
             title = {
                 Column {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(Icons.Default.AutoAwesome, contentDescription = null, tint = NeonPurple)
+                        Icon(Icons.Default.Star, contentDescription = null, tint = NeonPurple)
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
                             text = "Audit Perbandingan Gemini",
@@ -586,7 +595,7 @@ class MainActivity : ComponentActivity() {
                             ) {
                                 Column(modifier = Modifier.padding(10.dp)) {
                                     Row(verticalAlignment = Alignment.CenterVertically) {
-                                        Icon(Icons.Default.SmartToy, contentDescription = null, tint = NeonPurple, modifier = Modifier.size(16.dp))
+                                        Icon(Icons.Default.Star, contentDescription = null, tint = NeonPurple, modifier = Modifier.size(16.dp))
                                         Spacer(modifier = Modifier.width(6.dp))
                                         Text("Hasil Analisis Gemini AI:", fontWeight = FontWeight.Bold, color = NeonPurple, fontSize = 13.sp)
                                     }
@@ -625,7 +634,7 @@ class MainActivity : ComponentActivity() {
                                     Spacer(modifier = Modifier.width(8.dp))
                                     Text("Gemini Sedang Mengaudit...", fontSize = 12.sp)
                                 } else {
-                                    Icon(Icons.Default.AutoAwesome, contentDescription = null)
+                                    Icon(Icons.Default.Star, contentDescription = null)
                                     Spacer(modifier = Modifier.width(8.dp))
                                     Text("Minta Analisis Pembanding Gemini AI", fontSize = 12.sp)
                                 }
@@ -732,7 +741,7 @@ class MainActivity : ComponentActivity() {
                         colors = ButtonDefaults.buttonColors(containerColor = NeonCyan),
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        Icon(Icons.Default.Save, contentDescription = null, tint = CyberBgDark)
+                        Icon(Icons.Default.CheckCircle, contentDescription = null, tint = CyberBgDark)
                         Spacer(modifier = Modifier.width(6.dp))
                         Text("Simpan Konfigurasi", color = CyberBgDark, fontWeight = FontWeight.Bold)
                     }

@@ -13,12 +13,18 @@ Anda dapat memilih salah satu dari 3 cara berikut untuk mendapatkan file `.apk`:
 
 ### Cara 1: Otomatis via GitHub Actions (Paling Mudah — Tanpa Perlu Install Android Studio) 🚀
 
-Proyek ini sudah dilengkapi file workflow otomatis: [`.github/workflows/build-apk.yml`](file:///F:/dev/AegisAntivirus-Gemini/.github/workflows/build-apk.yml).
+Proyek ini sudah dilengkapi file workflow otomatis yang telah disempurnakan: [`.github/workflows/build-apk.yml`](file:///F:/dev/AegisAntivirus-Gemini/.github/workflows/build-apk.yml).
 
-1. Unggah (push) folder proyek `AegisAntivirus-Gemini` ke repositori GitHub Anda (bisa repositori privat atau publik).
+Workflow ini telah dilengkapi fitur **Self-Healing**:
+- Mendeteksi otomatis lokasi folder proyek (baik di root repositori maupun di dalam subfolder `AegisAntivirus-Gemini`).
+- Mengunduh `gradle-wrapper.jar` secara otomatis jika tidak sengaja terlewat saat push.
+- Memasang Android SDK Build-Tools 34 dan JDK 17 secara otomatis.
+- Mencari berkas APK secara menyeluruh di semua subdirektori.
+
+1. Unggah (push / commit) perubahan terbaru ke repositori GitHub Anda.
 2. Buka tab **Actions** di repositori GitHub Anda.
-3. Workflow **"Build Antivirus APK (Aegis Gemini)"** akan otomatis berjalan dan meng-compile APK di server cloud (gratis).
-4. Setelah selesai (sekitar 1–2 menit), klik hasil workflow dan unduh file:
+3. Workflow **"Build Antivirus APK (Aegis Gemini)"** akan otomatis berjalan hijau (Success) dan meng-compile APK di server cloud.
+4. Setelah selesai, klik hasil workflow pada bagian **Artifacts** dan unduh file:
    ```
    Aegis-Gemini-Antivirus-APK.zip  -->  ekstrak  -->  app-debug.apk
    ```
