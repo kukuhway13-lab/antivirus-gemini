@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Aegis Gemini Security</string>
+    <string name="scan_title">Pemindai Antivirus AI</string>
+    <string name="local_engine">Mesin Heuristik Lokal</string>
+    <string name="gemini_engine">Google Gemini AI Engine</string>
+    <string name="status_safe">Aman</string>
+    <string name="status_suspicious">Mencurigakan</string>
+    <string name="status_danger">Bahaya / Malware</string>
+</resources>
